@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Interactiva con Editor de Ecuaciones</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="toolbar">
+        <button id="pencil">Lápiz</button>
+        <button id="eraser">Borrador</button>
+        <button id="marker">Plumón</button>
+        <button id="backgroundBtn">Fondo</button>
+        <button id="equationBtn">Ecuaciones</button>
+        <input type="number" id="equationSizeInput" min="1" max="5" value="2" step="0.1">
+        <button id="borrarCanvas">Borrar Canvas</button>
+        <label for="sizeSelector">Grosor: </label>
+        <section>
+            <input type="range" id="sizeSelector" min="2" max="60" value="5">
+            <span id="sizeDisplay"></span>
+        </section>
+        <input type="color" id="colorPicker" value="#000000">
+        <input type="file" id="backgroundInput" accept="image/*" style="display: none;">
+    </div>
+
+    <img id="backgroundImage" src="" alt="Background">
+    <canvas id="canvas"></canvas>
+
+
+    <div id="equationEditor">
+        <div class="equation-buttons">
+            <button class="equation-button" data-latex="x^2">x²</button>
+            <button class="equation-button" data-latex="\sqrt{}">√</button>
+            <button class="equation-button" data-latex="\frac{}{}">÷</button>
+            <button class="equation-button" data-latex="\int">∫</button>
+            <button class="equation-button" data-latex="\sum">Σ</button>
+            <button class="equation-button" data-latex="\pi">π</button>
+            <button class="equation-button" data-latex="\theta">θ</button>
+            <button class="equation-button" data-latex="\infty">∞</button>
+        </div>
+        <div id="mathField"></div>
+        <div id="equationPreview"></div>
+        <button id="insertEquation">Insertar Ecuación</button>
+        <button id="positionEquation">Posicionar</button>
+        <button id="cancelEquation">Cancelar</button>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
